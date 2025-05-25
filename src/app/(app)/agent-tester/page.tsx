@@ -21,10 +21,10 @@ export default function AgentTesterPage() {
     // TODO: Implement navigation or modal for scenario creation
   };
 
-  const handleStartTest = () => {
-    console.log('Start Test button clicked');
-    // TODO: Implement test start logic
-  };
+  // const handleStartTest = () => { // No longer used directly by the native button
+  //   console.log('Start Test button clicked (custom Button)');
+  //   // TODO: Implement test start logic
+  // };
 
   const handlePauseTest = () => {
     console.log('Pause button clicked');
@@ -75,9 +75,14 @@ export default function AgentTesterPage() {
               <Textarea id="agentGoal" placeholder="Example: Book a flight to Paris for next week." className="mt-1 min-h-[80px]" />
             </div>
 
-            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" onClick={handleStartTest}>
+            {/* Changed to native HTML button for diagnostics */}
+            <button 
+              onClick={() => alert('Start Test button clicked!')} 
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-10 px-4 py-2 rounded-md text-sm font-medium flex items-center justify-center gap-2"
+            >
               <Play className="mr-2 h-4 w-4" /> Start Test
-            </Button>
+            </button>
+            
             <div className="flex gap-2">
               <Button variant="outline" className="w-full" onClick={handlePauseTest}>
                 <Pause className="mr-2 h-4 w-4" /> Pause
