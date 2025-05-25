@@ -31,8 +31,8 @@ export default function AgentTesterPage() {
             <div>
               <Label htmlFor="agentConfig" className="text-sm font-medium">Agent Configuration (JSON)</Label>
               <Textarea id="agentConfig" placeholder='{ "name": "MyAgent", "version": "1.0", ... }' className="mt-1 min-h-[100px]" />
-              <button 
-                onClick={() => alert('Upload Config button clicked!')} 
+              <button
+                onClick={() => alert('Upload Config button clicked!')}
                 className="mt-2 w-full h-9 px-3 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md text-sm font-medium flex items-center justify-center gap-2"
               >
                 <UploadCloud className="mr-2 h-4 w-4" /> Upload Config
@@ -42,11 +42,11 @@ export default function AgentTesterPage() {
             <div>
               <Label htmlFor="scenarioSelect" className="text-sm font-medium">Select Scenario</Label>
               <Input id="scenarioSelect" placeholder="Search or select a scenario..." className="mt-1" />
-              <button 
-                onClick={() => alert('Create New Scenario link clicked!')} 
-                className="mt-1 p-0 h-auto text-primary hover:underline text-sm font-medium flex items-center"
+              <button
+                onClick={() => alert('Create New Scenario link clicked!')}
+                className="mt-2 h-9 px-3 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md text-sm font-medium flex items-center justify-center gap-2"
               >
-                Or create a new scenario <ListChecks className="ml-1 h-3 w-3" />
+                <ListChecks className="mr-2 h-4 w-4" /> Create New Scenario
               </button>
             </div>
 
@@ -57,22 +57,22 @@ export default function AgentTesterPage() {
               <Textarea id="agentGoal" placeholder="Example: Book a flight to Paris for next week." className="mt-1 min-h-[80px]" />
             </div>
 
-            <button 
-              onClick={() => alert('Start Test button clicked!')} 
+            <button
+              onClick={() => alert('Start Test button clicked!')}
               className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-10 px-4 py-2 rounded-md text-sm font-medium flex items-center justify-center gap-2"
             >
               <Play className="mr-2 h-4 w-4" /> Start Test
             </button>
             
             <div className="flex gap-2">
-              <button 
-                onClick={() => alert('Pause button clicked!')} 
+              <button
+                onClick={() => alert('Pause button clicked!')}
                 className="w-full h-10 px-4 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md text-sm font-medium flex items-center justify-center gap-2"
               >
                 <Pause className="mr-2 h-4 w-4" /> Pause
               </button>
-              <button 
-                onClick={() => alert('Reset button clicked!')} 
+              <button
+                onClick={() => alert('Reset button clicked!')}
                 className="w-full h-10 px-4 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md text-sm font-medium flex items-center justify-center gap-2"
               >
                 <RotateCcw className="mr-2 h-4 w-4" /> Reset
