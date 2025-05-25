@@ -77,7 +77,7 @@ export default function AgentTesterPage() {
               <p className="text-sm font-mono text-muted-foreground whitespace-pre-wrap">
                 [<span className="text-primary">LOG</span>] Agent "MyAgent" started with goal: "Book a flight..."
                 {"\n"}[<span className="text-accent">TOOL_CALL</span>] Using tool "FlightBookingAPI" with params: {{ '{ "destination": "Paris" }' }}
-                {"\n"}[<span className="text-green-500">TOOL_RESPONSE</span>] API success: {{ '{ "options": [...] }' }}
+                {"\n"}[<span className="text-primary">TOOL_RESPONSE</span>] API success: {{ '{ "options": [...] }' }}
                 {"\n"}[<span className="text-destructive">ERROR</span>] Failed to parse date. Invalid format.
                 {"\n"}[<span className="text-primary">LOG</span>] Agent attempting to clarify date format...
               </p>
@@ -97,7 +97,7 @@ export default function AgentTesterPage() {
                 </Card>
                 <Card className="bg-secondary/50">
                     <CardHeader className="pb-2">
-                        <CardTitle className="text-base flex items-center"><DollarSign className="mr-2 h-5 w-5 text-green-600" /> Cost Estimation</CardTitle>
+                        <CardTitle className="text-base flex items-center"><DollarSign className="mr-2 h-5 w-5 text-primary" /> Cost Estimation</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <p className="text-sm">Current session cost: <span className="font-semibold">$0.023</span></p>
