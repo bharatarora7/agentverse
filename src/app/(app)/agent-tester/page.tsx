@@ -3,7 +3,7 @@
 
 import { PageHeader } from '@/components/shared/page-header';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button'; // Temporarily remove direct import if not used elsewhere after changes
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
@@ -11,30 +11,7 @@ import { UploadCloud, Play, Pause, RotateCcw, AlertCircle, DollarSign, ListCheck
 import { Separator } from '@/components/ui/separator';
 
 export default function AgentTesterPage() {
-  const handleUploadConfig = () => {
-    console.log('Upload Config button clicked');
-    // TODO: Implement file upload logic
-  };
-
-  const handleCreateNewScenario = () => {
-    console.log('Create New Scenario button clicked');
-    // TODO: Implement navigation or modal for scenario creation
-  };
-
-  // const handleStartTest = () => { // No longer used directly by the native button
-  //   console.log('Start Test button clicked (custom Button)');
-  //   // TODO: Implement test start logic
-  // };
-
-  const handlePauseTest = () => {
-    console.log('Pause button clicked');
-    // TODO: Implement test pause logic
-  };
-
-  const handleResetTest = () => {
-    console.log('Reset button clicked');
-    // TODO: Implement test reset logic
-  };
+  // onClick handlers are now inline alerts for diagnostics
 
   return (
     <div className="flex flex-col gap-6 p-4 md:p-6 lg:p-8">
@@ -54,18 +31,23 @@ export default function AgentTesterPage() {
             <div>
               <Label htmlFor="agentConfig" className="text-sm font-medium">Agent Configuration (JSON)</Label>
               <Textarea id="agentConfig" placeholder='{ "name": "MyAgent", "version": "1.0", ... }' className="mt-1 min-h-[100px]" />
-              <Button variant="outline" size="sm" className="mt-2 w-full" onClick={handleUploadConfig}>
+              <button 
+                onClick={() => alert('Upload Config button clicked!')} 
+                className="mt-2 w-full h-9 px-3 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md text-sm font-medium flex items-center justify-center gap-2"
+              >
                 <UploadCloud className="mr-2 h-4 w-4" /> Upload Config
-              </Button>
+              </button>
             </div>
 
             <div>
               <Label htmlFor="scenarioSelect" className="text-sm font-medium">Select Scenario</Label>
-              {/* Replace with actual Select component when data is available */}
               <Input id="scenarioSelect" placeholder="Search or select a scenario..." className="mt-1" />
-              <Button variant="link" size="sm" className="mt-1 p-0 h-auto" onClick={handleCreateNewScenario}>
+              <button 
+                onClick={() => alert('Create New Scenario link clicked!')} 
+                className="mt-1 p-0 h-auto text-primary hover:underline text-sm font-medium flex items-center"
+              >
                 Or create a new scenario <ListChecks className="ml-1 h-3 w-3" />
-              </Button>
+              </button>
             </div>
 
             <Separator />
@@ -75,7 +57,6 @@ export default function AgentTesterPage() {
               <Textarea id="agentGoal" placeholder="Example: Book a flight to Paris for next week." className="mt-1 min-h-[80px]" />
             </div>
 
-            {/* Changed to native HTML button for diagnostics */}
             <button 
               onClick={() => alert('Start Test button clicked!')} 
               className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-10 px-4 py-2 rounded-md text-sm font-medium flex items-center justify-center gap-2"
@@ -84,12 +65,18 @@ export default function AgentTesterPage() {
             </button>
             
             <div className="flex gap-2">
-              <Button variant="outline" className="w-full" onClick={handlePauseTest}>
+              <button 
+                onClick={() => alert('Pause button clicked!')} 
+                className="w-full h-10 px-4 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md text-sm font-medium flex items-center justify-center gap-2"
+              >
                 <Pause className="mr-2 h-4 w-4" /> Pause
-              </Button>
-              <Button variant="outline" className="w-full" onClick={handleResetTest}>
+              </button>
+              <button 
+                onClick={() => alert('Reset button clicked!')} 
+                className="w-full h-10 px-4 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md text-sm font-medium flex items-center justify-center gap-2"
+              >
                 <RotateCcw className="mr-2 h-4 w-4" /> Reset
-              </Button>
+              </button>
             </div>
           </CardContent>
         </Card>
@@ -114,7 +101,6 @@ export default function AgentTesterPage() {
                 {"\n"}[<span className="text-destructive">ERROR</span>] Failed to parse date. Invalid format.
                 {"\n"}[<span className="text-primary">LOG</span>] Agent attempting to clarify date format...
               </p>
-              {/* Placeholder for actual logs */}
             </div>
 
             <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
