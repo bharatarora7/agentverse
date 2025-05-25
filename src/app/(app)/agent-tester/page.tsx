@@ -1,4 +1,6 @@
 
+'use client';
+
 import { PageHeader } from '@/components/shared/page-header';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -9,6 +11,31 @@ import { UploadCloud, Play, Pause, RotateCcw, AlertCircle, DollarSign, ListCheck
 import { Separator } from '@/components/ui/separator';
 
 export default function AgentTesterPage() {
+  const handleUploadConfig = () => {
+    console.log('Upload Config button clicked');
+    // TODO: Implement file upload logic
+  };
+
+  const handleCreateNewScenario = () => {
+    console.log('Create New Scenario button clicked');
+    // TODO: Implement navigation or modal for scenario creation
+  };
+
+  const handleStartTest = () => {
+    console.log('Start Test button clicked');
+    // TODO: Implement test start logic
+  };
+
+  const handlePauseTest = () => {
+    console.log('Pause button clicked');
+    // TODO: Implement test pause logic
+  };
+
+  const handleResetTest = () => {
+    console.log('Reset button clicked');
+    // TODO: Implement test reset logic
+  };
+
   return (
     <div className="flex flex-col gap-6 p-4 md:p-6 lg:p-8">
       <PageHeader
@@ -27,7 +54,7 @@ export default function AgentTesterPage() {
             <div>
               <Label htmlFor="agentConfig" className="text-sm font-medium">Agent Configuration (JSON)</Label>
               <Textarea id="agentConfig" placeholder='{ "name": "MyAgent", "version": "1.0", ... }' className="mt-1 min-h-[100px]" />
-              <Button variant="outline" size="sm" className="mt-2 w-full">
+              <Button variant="outline" size="sm" className="mt-2 w-full" onClick={handleUploadConfig}>
                 <UploadCloud className="mr-2 h-4 w-4" /> Upload Config
               </Button>
             </div>
@@ -36,7 +63,7 @@ export default function AgentTesterPage() {
               <Label htmlFor="scenarioSelect" className="text-sm font-medium">Select Scenario</Label>
               {/* Replace with actual Select component when data is available */}
               <Input id="scenarioSelect" placeholder="Search or select a scenario..." className="mt-1" />
-              <Button variant="link" size="sm" className="mt-1 p-0 h-auto">
+              <Button variant="link" size="sm" className="mt-1 p-0 h-auto" onClick={handleCreateNewScenario}>
                 Or create a new scenario <ListChecks className="ml-1 h-3 w-3" />
               </Button>
             </div>
@@ -48,14 +75,14 @@ export default function AgentTesterPage() {
               <Textarea id="agentGoal" placeholder="Example: Book a flight to Paris for next week." className="mt-1 min-h-[80px]" />
             </div>
 
-            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" onClick={handleStartTest}>
               <Play className="mr-2 h-4 w-4" /> Start Test
             </Button>
             <div className="flex gap-2">
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full" onClick={handlePauseTest}>
                 <Pause className="mr-2 h-4 w-4" /> Pause
               </Button>
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full" onClick={handleResetTest}>
                 <RotateCcw className="mr-2 h-4 w-4" /> Reset
               </Button>
             </div>
