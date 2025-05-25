@@ -1,3 +1,4 @@
+
 import { PageHeader } from '@/components/shared/page-header';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -66,12 +67,12 @@ export default function ToolIntegratorPage() {
             <div className="space-y-4">
               <div>
                 <h4 className="font-semibold text-md">Interaction Strategy:</h4>
-                <p className="text-sm text-muted-foreground mt-1 bg-muted/50 p-3 rounded-md border">
+                <p className="text-sm text-muted-foreground mt-1 bg-muted/50 p-3 rounded-md border whitespace-pre-wrap">
                   1. Agent parses the natural language goal: "Schedule a meeting for next Tuesday at 3 PM named 'Project Sync'".
                   {"\n"}2. Agent identifies the intent: "create_calendar_event".
                   {"\n"}3. Agent extracts parameters: date="next Tuesday", time="3 PM", title="Project Sync".
                   {"\n"}4. Agent resolves "next Tuesday" to a specific date (e.g., 2024-07-30).
-                  {"\n"}5. Agent calls `CalendarTool.createEvent` with parameters: `{{ '{ "date": "2024-07-30", "time": "15:00", "title": "Project Sync" }' }}`.
+                  {"\n"}5. Agent calls `CalendarTool.createEvent` with parameters: {'{ "date": "2024-07-30", "time": "15:00", "title": "Project Sync" }'}.
                   {"\n"}6. Agent confirms successful event creation based on tool response.
                 </p>
               </div>
@@ -87,7 +88,7 @@ export default function ToolIntegratorPage() {
                   {"\n"}[<span className="text-primary">INFO</span>] Parsing tool schema: "CalendarTool" detected.
                   {"\n"}[<span className="text-primary">INFO</span>] Mapping goal to tool actions...
                   {"\n"}[<span className="text-accent">SUGGESTION</span>] Consider adding error handling for date conflicts.
-                  {"\n"}[<span className="text-green-500">SUCCESS</span>] Optimal strategy generated.
+                  {"\n"}[<span className="text-primary">SUCCESS</span>] Optimal strategy generated.
                 </p>
               </div>
             </div>
